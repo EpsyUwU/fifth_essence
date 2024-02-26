@@ -21,15 +21,15 @@ class CustomPhoneNumberInput extends StatelessWidget {
       initialValue: PhoneNumber(isoCode: 'MX'),
       textFieldController: TextEditingController(),
       inputDecoration: InputDecoration(
-        labelStyle: TextStyle(color: Colors.white),
+        labelStyle: const TextStyle(color: Colors.white),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
-          borderSide: BorderSide(color: Color(0xFF9C58CB), width: 2),
+          borderSide: const BorderSide(color: Color(0xFF9C58CB), width: 2),
         ),
         fillColor: Colors.transparent,
         filled: true,
       ),
-      textStyle: TextStyle(color: Colors.white),
+      textStyle: const TextStyle(color: Colors.white),
     );
   }
 }

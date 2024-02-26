@@ -1,6 +1,5 @@
 import 'package:fifth_essence/display/screens/calendary/calendary.dart';
 import 'package:fifth_essence/display/screens/post/post.dart';
-import 'package:fifth_essence/display/screens/register/register.dart';
 import 'package:fifth_essence/display/screens/streams/streams.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +19,6 @@ class _NavBarState extends State<NavBar> {
     const Calendary(),
     const Streams(),
     const Post(),
-    const Register(),
   ];
 
   void onItemTapped(int index) {
@@ -43,20 +41,16 @@ class _NavBarState extends State<NavBar> {
           backgroundColor: const Color(0xFF392755),
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.calendar_month_outlined),
               label: 'Calendary',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.newspaper),
+              icon: Icon(Icons.stream_outlined),
               label: 'Strems',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.podcasts),
+              icon: Icon(Icons.local_post_office_outlined),
               label: 'Post',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Register',
             ),
           ],
           currentIndex: pagenumber,

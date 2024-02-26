@@ -1,3 +1,4 @@
+import 'package:fifth_essence/display/screens/register/register_code.dart';
 import 'package:fifth_essence/display/widgets/custom_button_filled.dart';
 import 'package:fifth_essence/display/widgets/custom_button_outline.dart';
 import 'package:fifth_essence/display/widgets/custom_phone_number_input.dart';
@@ -93,7 +94,9 @@ class Register extends StatelessWidget {
               child: Row(
               children: [
                 Expanded(
-                  child: CustomButtonFilled(onPressed:() {Navigator.push(context, MaterialPageRoute(builder: (context) => const NavBar(title: 'colita',),),);}, text: 'Next')
+                  child: CustomButtonFilled(onPressed:()
+                    {Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterCode(),),
+                    );}, text: 'Next')
                   ),
                 ],
               ),
