@@ -22,7 +22,7 @@ class Post extends StatelessWidget {
             ],
           ),
         )
-      )
+      ) //
     );
   }
 }

@@ -15,6 +15,11 @@ class CustomUserInfo extends StatelessWidget {
             color: Colors.white,
             borderRadius: BorderRadius.circular(90),
           ),
+          child: const Icon(
+            Icons.person,
+            size: 17,
+            color: Colors.black,
+          ),
         ),
         const SizedBox(width: 10),
         const Align(
