@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(backgroundColor: Color(0xFF5737AC))
       ),
       debugShowCheckedModeBanner: false,
-      home: const StreamView(title: "hola soy un stream",),
+      home: const StreamView(title: "hola soy un str eam",),
     );
   }
 }

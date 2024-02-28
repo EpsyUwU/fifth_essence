@@ -1,3 +1,4 @@
+import 'package:fifth_essence/display/consts/ScreenProperties.dart';
 import 'package:flutter/material.dart';
 
 class CustomComment extends StatelessWidget {
@@ -34,7 +35,7 @@ class CustomComment extends StatelessWidget {
                       color: const Color.fromRGBO(87, 55, 172, 100),
                       borderRadius: BorderRadius.circular(13),
                     ),
-                    width: 320,
+                    width: ScreenProperties.getScreenSize(context).width / 1.3,
                     height: 50,
                     child: Row(
                       children: [

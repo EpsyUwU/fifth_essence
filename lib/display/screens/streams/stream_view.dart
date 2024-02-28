@@ -14,7 +14,7 @@ class StreamView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             const SizedBox(height: 20,),
@@ -86,7 +86,7 @@ class StreamView extends StatelessWidget {
                             comment: "I love this song"
                         ),
                         CustomComment(
-                            username: "Celeste uwu",
+                            username: "Celeste uwu ",
                             comment: "I love this song"
                         ),
                         CustomComment(
