@@ -18,32 +18,16 @@ class StreamView extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 20,),
-            Row(
+            const Row(
               children: [
-                const Icon(
+                Icon(
                   Icons.arrow_back,
                   size: 35,
                   color: Colors.white,
                 ),
-                const CustomUserInfo(),
-                SizedBox(
-                  width: 79,
-                  height: 30,
-                  child: ElevatedButton(onPressed: popo,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(57, 39, 85, 100), // Este es el color de fondo del botón
-                      ),
-                      child: const Text(
-                          "follow",
-                          style: TextStyle(
-                            fontSize: 11,
-                            color: Colors.white,
-                          )
-                      )
-                  ),
-                ),
-                const Spacer(),
-                const CustomViewCount(viewers: 1000)
+                CustomUserInfo(),
+                Spacer(),
+                CustomViewCount(viewers: 1000)
               ]
             ),
             const SizedBox(height: 20,),
@@ -54,7 +38,7 @@ class StreamView extends StatelessWidget {
                 color: Colors.black,
                 borderRadius: BorderRadius.circular(20)
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.video_camera_front_outlined,
                 size: 100,
                 color: Colors.white,
