@@ -1,3 +1,4 @@
+import 'package:fifth_essence/display/widgets/category_buttons.dart';
 import 'package:flutter/material.dart';
 
 class Post extends StatelessWidget {
@@ -5,6 +6,18 @@ class Post extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('hola son post');
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CategoryButtons(),
+            const SizedBox(height: 15),
+            Text("All posts", style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold)),
+          ],
+        ),
+      )
+    );
   }
 }
