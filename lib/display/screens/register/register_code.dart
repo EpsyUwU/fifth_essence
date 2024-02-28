@@ -95,7 +95,7 @@ class RegisterCode extends StatelessWidget {
                 children: [
                   Expanded(
                       child: CustomButtonFilled(onPressed:()
-                      {Navigator.push(context, MaterialPageRoute(builder: (context) => const NavBar(title: 'xD',)),
+                      {Navigator.push(context, MaterialPageRoute(builder: (context) => const NavBar(title: '',)),
                       );}, text: 'Next')
                   ),
                 ],
