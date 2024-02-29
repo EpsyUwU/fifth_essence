@@ -1,3 +1,4 @@
+import 'package:fifth_essence/display/widgets/custom_button_follow.dart';
 import 'package:flutter/material.dart';
 
 class CustomUserInfo extends StatelessWidget {
@@ -13,6 +14,11 @@ class CustomUserInfo extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(90),
+          ),
+          child: const Icon(
+            Icons.person,
+            size: 17,
+            color: Colors.black,
           ),
         ),
         const SizedBox(width: 10),
@@ -39,7 +45,12 @@ class CustomUserInfo extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 10),
+        CustomButtonFollow(onPressed: onPressed)
       ]
     );
+  }
+
+  void onPressed() {
+    print("Follow button pressed");
   }
 }

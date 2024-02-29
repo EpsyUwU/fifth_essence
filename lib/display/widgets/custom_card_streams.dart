@@ -1,3 +1,4 @@
+import 'package:fifth_essence/display/screens/streams/stream_view.dart';
 import 'package:flutter/material.dart';
 
 class CustomCardStream extends StatelessWidget {
@@ -90,7 +91,7 @@ class CustomCardStream extends StatelessWidget {
                       color: Colors.transparent,
                       child: InkWell(
                         onTap: () {
-                          print('Card presionada');
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const StreamView(title: 'popoS',),),);
                           // Aquí puedes agregar la lógica que se ejecutará cuando se presione la tarjeta
                         },
                         // El resto de tu código aquí
