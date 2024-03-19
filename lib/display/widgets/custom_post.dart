@@ -4,7 +4,9 @@ import 'package:fifth_essence/display/widgets/custom_user_infor.dart';
 import 'package:flutter/material.dart';
 
 class CustomPost extends StatelessWidget {
-  const CustomPost({super.key});
+  const CustomPost({super.key, required this.title});
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +17,9 @@ class CustomPost extends StatelessWidget {
         children: [
           const CustomUserInfo(),
           const SizedBox(height: 10),
-          const Text(
-            "Hola esta es mi primera foto c:",
-            style: TextStyle(
+          Text(
+            title,
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 15,
             ),

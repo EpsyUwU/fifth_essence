@@ -3,6 +3,8 @@ import 'package:fifth_essence/display/screens/post/post.dart';
 import 'package:fifth_essence/display/screens/streams/streams.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/profile/profile.dart';
+
 class NavBar extends StatefulWidget {
   const NavBar({super.key, required this.title});
 
@@ -19,6 +21,7 @@ class _NavBarState extends State<NavBar> {
     const Calendary(),
     const Streams(),
     const Post(),
+    const Profile(),
   ];
 
   void onItemTapped(int index) {
@@ -51,6 +54,10 @@ class _NavBarState extends State<NavBar> {
             BottomNavigationBarItem(
               icon: Icon(Icons.local_post_office_outlined),
               label: 'Post',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
             ),
           ],
           currentIndex: pagenumber,

@@ -31,7 +31,7 @@ void PostModal(BuildContext context) {
                   dashPattern: const [8, 4],
                   strokeWidth: 3,
                   color: Colors.white,
-                  radius: Radius.circular(15),
+                  radius: const Radius.circular(15),
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
