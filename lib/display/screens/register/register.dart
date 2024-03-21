@@ -6,6 +6,7 @@ import 'package:fifth_essence/display/screens/register/register_code.dart';
 import 'package:fifth_essence/display/widgets/custom_button_filled.dart';
 import 'package:fifth_essence/display/widgets/custom_button_outline.dart';
 import 'package:fifth_essence/display/widgets/custom_phone_number_input.dart';
+import 'package:fifth_essence/display/widgets/custom_text_field.dart';
 import 'package:fifth_essence/display/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -22,6 +23,7 @@ class Register extends StatelessWidget {
     final request = UserRequest();
 
     request.username = "";
+    request.phoneNumber = "";
     request.email = "sr.conejo.uwu@gmail.com";
     request.roles = {RoleRequest(name: "ROLE_USER")};
 
@@ -39,7 +41,8 @@ class Register extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(16),
-            child: Column(
+            child: SingleChildScrollView(
+              child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -55,11 +58,23 @@ class Register extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 35),
+                const SizedBox(height: 5),
                 const Row(
                   children: [
                     Text(
-                      'Register to the app with your phone number or gmail',
+                      'Register to the app with your phone number',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal),
+                    ),
+                  ],
+                ),
+
+                const Row(
+                  children: [
+                    Text(
+                      'or gmail',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
@@ -72,19 +87,19 @@ class Register extends StatelessWidget {
                   children: [
                     Expanded(
                         child: CustomButtonOutline(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const NavBar(
-                              title: 'xD',
-                            ),
-                          ),
-                        );
-                      },
-                      text: 'Login with google',
-                      imageAsset: 'assets/image/logo_google.png',
-                    )),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const NavBar(
+                                  title: 'xD',
+                                ),
+                              ),
+                            );
+                          },
+                          text: 'Login with google',
+                          imageAsset: 'assets/image/logo_google.png',
+                        )),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -111,12 +126,7 @@ class Register extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
-                const Text("Phone number",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 28,
-                        fontWeight: FontWeight.normal)),
+
                 const SizedBox(height: 20),
                 Row(
                   children: [
@@ -129,34 +139,35 @@ class Register extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 5),
-                const Text("Password",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.normal)),
-                const SizedBox(height: 5),
-                Expanded(
-                    child: TextField(
-                  style: const TextStyle(color: Colors.white),
-                  onChanged: (value) {
-                    request.password = value;
-                  },
-                )),
-                const Text("Name",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.normal)),
-                const SizedBox(height: 5),
-                Expanded(
-                    child: TextField(
-                  style: const TextStyle(color: Colors.white),
-                  onChanged: (value) {
-                    request.username = value;
-                  },
-                ))
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: CustomTextField(
+                        labelText: 'Password',
+                        onChanged: (value) {
+                          request.password = value;
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: CustomTextField(
+                        labelText: 'Name',
+                        onChanged: (value) {
+                          request.username = value;
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 80),
               ],
+            ),
             ),
           ),
           Positioned(
@@ -192,7 +203,9 @@ class Register extends StatelessWidget {
                           });
                         },
                         text: 'Next');
-                  })),
+                  },
+                  ),
+                  ),
                 ],
               ),
             ),

@@ -18,70 +18,85 @@ class Profile extends ConsumerWidget {
         padding: const EdgeInsets.all(30),
         child: Column(
           children: [
-            Row(
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                    size: 30,
-                  ),
-                ),
-                const SizedBox(width: 90),
-                const Text(
-                  'Profile',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold
+                SizedBox(height: 30),
+                CircleAvatar(
+                  radius: 50,
+                  backgroundColor: Colors.white,
+                  child: Icon(
+                    Icons.person,
+                    size: 50,
+                    color: Color.fromRGBO(156, 88, 203, 100),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 30),
-            const CircleAvatar(
-              radius: 50,
-              backgroundColor: Colors.white,
-              child: Icon(
-                Icons.person,
-                size: 50,
-                color: Color.fromRGBO(156, 88, 203, 100),
-              ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FutureBuilder(
+                    future: repository.findById(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        final response = snapshot.data!.data as Map<String, dynamic>;
+                        return Column(
+                          children: [
+                            Text(
+                              response['username'],
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              response['phoneNumber'],
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.normal
+                              ),
+                            ),
+                          ],
+                        );
+                      } else {
+                        return const CircularProgressIndicator();
+                      }
+                    }
+                )
+              ],
             ),
             const SizedBox(height: 20),
-            FutureBuilder(
-                future: repository.findById(),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.done) {
-                    final response = snapshot.data!.data as Map<String, dynamic>;
-                    return Column(
-                      children: [
-                        Text(
-                          response['username'],
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          response['email'],
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold
-                          ),
-                        ),
-                      ],
-                    );
-                  } else {
-                    return const CircularProgressIndicator();
-                  }
-                }
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FutureBuilder(
+                    future: repository.findById(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        final response = snapshot.data!.data as Map<String, dynamic>;
+                        return Column(
+                          children: [
+                            Text(
+                              response['email'],
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.normal
+                              ),
+                            ),
+                          ],
+                        );
+                      } else {
+                        return const CircularProgressIndicator();
+                      }
+                    }
+                )
+              ],
             )
           ],
         ),

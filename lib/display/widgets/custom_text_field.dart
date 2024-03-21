@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   final String labelText;
   final IconData? icon;
+  final Function(String)? onChanged;
 
   const CustomTextField({
     super.key,
     required this.labelText,
     this.icon,
+    this.onChanged,
   });
 
   @override
@@ -16,6 +18,7 @@ class CustomTextField extends StatelessWidget {
       height: 61,
       width: 336,
       child: TextField(
+        onChanged: onChanged, // Pasar el callback al TextField
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -38,5 +41,4 @@ class CustomTextField extends StatelessWidget {
       ),
     );
   }
-
 }
