@@ -68,14 +68,7 @@ class Profile extends ConsumerWidget {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        Text(
-                          response['email'],
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold
-                          ),
-                        ),
+
                       ],
                     );
                   } else {

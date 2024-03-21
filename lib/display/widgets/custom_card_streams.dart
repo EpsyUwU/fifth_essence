@@ -8,6 +8,7 @@ class CustomCardStream extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 16),
         Row(
           children: [
             Container(
