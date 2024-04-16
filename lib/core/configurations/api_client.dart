@@ -5,7 +5,7 @@ class ApiClient {
   static final ApiClient _singleton = ApiClient._internal();
   static final Dio _dio = Dio();
 
-  static const String _baseUrl = 'http://3.236.251.189:8080/api/v1';
+  static const String _baseUrl = 'http://100.26.10.127:8080/api/v1';
 
   factory ApiClient() {
     return _singleton;
