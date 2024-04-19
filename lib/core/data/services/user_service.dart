@@ -50,6 +50,9 @@ class UserService {
   }
 
   Future<BaseResponse> register(UserRequest request) async {
+
+    await _apiClient.resetJwt();
+
     final response = await _apiClient.post(
       "/user",
       data: request.toJson(),
@@ -64,6 +67,23 @@ class UserService {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setInt('userId', (baseResponse.data as Map<String, dynamic>)['id']);
 
+    return baseResponse;
+  }
+
+  Future<BaseResponse> update(UserRequest request) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int? id = prefs.getInt('userId');
+
+    final response = await _apiClient.put(
+      "/user/$id",
+      data: request.toJson(),
+    );
+
+    if (response.statusCode! >= 400) {
+      throw Exception('Error de registro: ${response.statusCode}');
+    }
+
+    BaseResponse baseResponse = BaseResponse.fromJson(response.data);
     return baseResponse;
   }
 }

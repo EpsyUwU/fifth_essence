@@ -22,4 +22,8 @@ class UserRepository {
     return _service.findById();
   }
 
+  Future<BaseResponse> update(UserRequest request) async {
+    return _service.update(request);
+  }
+
 }

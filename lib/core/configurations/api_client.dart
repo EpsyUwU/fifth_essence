@@ -5,7 +5,7 @@ class ApiClient {
   static final ApiClient _singleton = ApiClient._internal();
   static final Dio _dio = Dio();
 
-  static const String _baseUrl = 'http://100.26.10.127:8080/api/v1';
+  static const String _baseUrl = 'http://192.168.18.82:8080/api/v1';
 
   factory ApiClient() {
     return _singleton;
@@ -22,6 +22,11 @@ class ApiClient {
         return handler.next(options);
       },
     ));
+  }
+
+  Future<void> resetJwt() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.remove('jwt');
   }
 
   Future<Response> get(String url, {Map<String, dynamic>? queryParameters}) async {

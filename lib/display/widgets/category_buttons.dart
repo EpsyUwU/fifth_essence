@@ -1,3 +1,4 @@
+import 'package:fifth_essence/display/screens/post/post_modal.dart';
 import 'package:fifth_essence/display/screens/streams/bottonsheet_streams.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class CategoryButtons extends StatelessWidget {
           width: 122,
           height: 30,
           child: ElevatedButton.icon(
-            onPressed: () {showBottomSheetStreams(context);},
+            onPressed: () { PostModal(context); },
             icon: const Icon(Icons.stream_outlined, size: 20, color: Colors.white), // Puedes cambiar este ícono
             label: const Text('Streams', style: TextStyle(color: Colors.white)), // Puedes cambiar este texto
             style: ElevatedButton.styleFrom(

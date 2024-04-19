@@ -10,7 +10,7 @@ import 'package:fifth_essence/display/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 
 import '../../../core/data/models/request/role_request.dart';
 
@@ -23,7 +23,7 @@ class Register extends StatelessWidget {
 
     request.username = "";
     request.email = "sr.conejo.uwu@gmail.com";
-    request.roles = {RoleRequest(name: "ROLE_USER")};
+    request.roles = {RoleRequest(name: "admin")};
 
     return Scaffold(
       body: Stack(

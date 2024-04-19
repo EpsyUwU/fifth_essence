@@ -1,9 +1,9 @@
+import 'dart:math';
+
 import 'package:fifth_essence/core/providers/user_provider.dart';
+import 'package:fifth_essence/display/screens/profile/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../../core/data/models/response/user_response.dart';
 
 class Profile extends ConsumerWidget {
   const Profile({super.key});
@@ -82,7 +82,33 @@ class Profile extends ConsumerWidget {
                     return const CircularProgressIndicator();
                   }
                 }
-            )
+            ),
+            const SizedBox(height: 30),
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const EditProfile(),),);
+                    },
+                    child: const Text(
+                      'edit',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.all(15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       )

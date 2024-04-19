@@ -2,7 +2,7 @@ import 'dart:ffi';
 
 class PublicationRequest {
 
-  late Long authorId;
+  late int authorId;
   late String title;
   late String body;
 
